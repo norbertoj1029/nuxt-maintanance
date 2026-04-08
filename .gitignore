@@ -25,7 +25,6 @@ dist
 .netlify
 
 # Env
-.env
 
 # Testing
 reports
@@ -34,7 +33,6 @@ coverage
 .nyc_output
 
 # VSCode
-.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -54,3 +52,4 @@ coverage
 Network Trash Folder
 Temporary Items
 .apdisk
+config.bat
