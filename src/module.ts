@@ -57,14 +57,16 @@ export default defineNuxtModule<ModuleOptions>({
     const { resolve } = createResolver(import.meta.url)
 
     // Add Options to Runtime Config
-    nuxt.options.runtimeConfig.public.maintenanceModeEnabled
-      ||= options.enabled
-    nuxt.options.runtimeConfig.public.maintenanceModeBypassSecret
-      ||= options.bypassSecret
-    nuxt.options.runtimeConfig.public.maintenanceModeExclude
-      ||= options.exclude
-    nuxt.options.runtimeConfig.public.maintenanceModeInclude
-      ||= options.include
+    const pub = nuxt.options.runtimeConfig.public as {
+      maintenanceModeEnabled: boolean
+      maintenanceModeBypassSecret: string | null
+      maintenanceModeExclude: string[] | null
+      maintenanceModeInclude: string[] | null
+    }
+    pub.maintenanceModeEnabled ||= options.enabled
+    pub.maintenanceModeBypassSecret ||= options.bypassSecret
+    pub.maintenanceModeExclude ||= options.exclude
+    pub.maintenanceModeInclude ||= options.include
 
     // Add Composable
     addImportsDir(resolve('./runtime/composables'))
