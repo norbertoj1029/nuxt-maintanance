@@ -25,7 +25,6 @@ dist
 .netlify
 
 # Env
-.env
 
 # Testing
 reports
@@ -54,3 +53,4 @@ coverage
 Network Trash Folder
 Temporary Items
 .apdisk
+config.bat
