@@ -1,3 +1,5 @@
+import { defineEventHandler, getCookie } from 'h3'
+
 import {
   isMaintenanceEnabled,
   getMaintenanceModeConfig,
@@ -5,7 +7,6 @@ import {
   throwMaintenanceError,
   BYPASS_COOKIE_NAME,
 } from './../utils'
-import { defineEventHandler, getCookie } from '#imports'
 
 export default defineEventHandler((event) => {
   // Early return if maintenance mode is not enabled.
